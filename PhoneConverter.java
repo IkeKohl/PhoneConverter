@@ -45,7 +45,7 @@ public class PhoneConverter {
         return 1;
     }
 
-    public static long convertToNum(String grossNum) {
+    public static long convertToNum(String grossNum) throws Exception {
         for (int i = 0; i < 11; i++) {
             char val = grossNum.charAt(i);
             if (Character.isDigit(val)) {
@@ -58,22 +58,17 @@ public class PhoneConverter {
                 grossNum = newStr;
             }
             else {
-                System.out.println(grossNum.charAt(i) + " Character not allowed, please try again");
-                grossNum = "0";
-                break;
+                throw new Exception(grossNum.charAt(i) + " Character not allowed, please try again");
             }
         }
         long finalVal = Long.parseLong(grossNum);
         return finalVal;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         String num = getNumber();
         long finalVal = convertToNum(num);
-        if (finalVal == 0) {
-        }
-        else {
-            System.out.println(finalVal);
-        }
+        System.out.println(finalVal);
+        
     }
 
 
