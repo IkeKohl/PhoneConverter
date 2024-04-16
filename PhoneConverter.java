@@ -20,7 +20,7 @@ public class PhoneConverter {
     }
 
     public static int letterToString(char let) {
-        
+
         let = Character.toLowerCase(let);
         
         switch(let) {
@@ -70,7 +70,6 @@ public class PhoneConverter {
         String num = getNumber();
         long finalVal = convertToNum(num);
         if (finalVal == 0) {
-
         }
         else {
             System.out.println(finalVal);
