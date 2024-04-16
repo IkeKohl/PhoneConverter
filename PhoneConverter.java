@@ -18,7 +18,25 @@ public class PhoneConverter {
         }
         return num;
     }
+
+    public static int convertToNum(String grossNum) {
+        for (int i = 0; i < 11; i++) {
+            char val = grossNum.charAt(i);
+            if (Character.isDigit(val)) {
+                continue;
+            }
+            else if(Character.isLetter(val)) {
+                String newStr = grossNum.substring(0, i - 1) + 'i' + grossNum.substring(i + 1, grossNum.length());
+                grossNum = newStr;
+            }
+        }
+        return 0;
+    }
     public static void main(String[] args) {
         String num = getNumber();
+        
+
     }
+
+
 }
